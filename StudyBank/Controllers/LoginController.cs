@@ -26,7 +26,7 @@ namespace StudyBank.Controllers
                 User user = new DataBase().users.Where(x => x.Email == model.Email && x.Password == model.Password).FirstOrDefault();
 
                 if (user.Equals(null))
-                    throw new Exception("Login invalido");
+                    throw new Exception("Login inválido");
 
                 Account account = new DataBase().accounts.Where(x => x.TaxNumber == user.Person.TaxNumber).FirstOrDefault();
 
