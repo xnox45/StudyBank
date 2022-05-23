@@ -15,5 +15,19 @@ $("#Transfer").click(function () {
 })
 
 function Transfer() {
+    url = "/Account/Transfer"
 
+    model = {
+        Amount: $("#TransferAmount").val(),
+        Taxnumber: $("#Taxnumber").val()
+    }
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: model,
+        success: function (response) {
+            alert(response)
+        }
+    });
 }

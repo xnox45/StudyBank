@@ -14,12 +14,18 @@ namespace StudyBank.Controllers
         {
             Person person = new DataBase().persons.Where(x => x.TaxNumber == account.TaxNumber).FirstOrDefault();
 
-            AccountModel model = new AccountModel{
+            AccountModel model = new AccountModel {
                 Person = person, Amount = account.Amout,
                 Credit = account.Credit
             };
 
             return View(model);
+        }
+
+        [HttpPost]
+        public bool Transfer(TransferModel model)
+        {
+            return true;
         }
     }
 }
