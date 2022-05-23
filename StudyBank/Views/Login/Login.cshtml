@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "";
+    @model ClassLibrarySBank.Model.LoginModel;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</head>
+<section class="boxLogin container">
+    <div class="content">
+        <form class="login" asp-controller="Login" asp-action="SignIn" name="login">
+
+            <h1><i class="icon icon-key-1"></i> Login</h1>
+
+            <div class="padding">
+
+                <label>
+                    <input type="text" id="email" class="campos" placeholder="E-mail" name="email">
+                </label>
+
+                <label>
+                    <input type="password" id="password" class="campos" placeholder="Password" name="Password">
+                </label>
+
+                <button type="submit" class="btn fade_8S" >Entrar</button>
+
+            </div><!--padding-->
+
+            <div class="linksForm">
+
+                <a href="#" class="fade_4S" title="Resgatar Senha"><i class="icon icon-forward-1"></i> Resgatar Senha</a>
+                <a href="#" class="fade_4S" title="Cadastrar-se"><i class="icon icon-user-add"></i> Cadastro</a>
+
+            </div>
+
+        </form>
+
+    </div>
+</section><!--Login-->

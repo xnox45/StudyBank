@@ -1,0 +1,50 @@
+﻿@{ 
+}
+<h3 id="Name"></h3>
+
+<div class="row">
+    <div class="card col-md-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Conta</h5>
+            <p class="card-text" id="Amount">Saldo: </p>
+            <p class="card-text" id="Credit">Credito: </p>
+            <button id="Transfer" class="btn btn-primary">Transferência</button>
+        </div>
+    </div>
+
+    @*<div class="card col-md-3 ml-auto" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">pix</h5>
+            <a href="#" class="btn btn-primary">Transferência</a>
+        </div>
+    </div>*@
+</div>
+
+<div class="modal" id="TransferModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Transferência</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5><strong>Informações:</strong></h5>
+                <input placeholder="R$"/>
+                <br />
+                <input placeholder="Nome do Beneficiado"/>
+                <br />
+                <input placeholder="CPF do Beneficiado"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="Transfer" class="btn btn-primary">Transferir</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/Account/Account.js"></script>
