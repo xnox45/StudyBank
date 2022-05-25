@@ -5,9 +5,9 @@
 model = JSON.parse(localStorage.getItem("User"));
 
 function LoadPage() {
-    $("#Name").html(model.Person.Name);
-    $("#Amount").append(model.Amount);
-    $("#Credit").append(model.Credit);
+    $("#Name").html(model.person.name);
+    $("#Amount").append(model.amount);
+    $("#Credit").append(model.credit);
 }
 
 $("#Transfer").click(function () {

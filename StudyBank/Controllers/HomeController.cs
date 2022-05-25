@@ -19,9 +19,9 @@ namespace StudyBank.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(AccountModel model)
+        public IActionResult Index()
         {
-            return View(model);
+            return View();
         }
 
         public IActionResult Privacy()
