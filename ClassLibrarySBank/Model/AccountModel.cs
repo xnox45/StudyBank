@@ -14,5 +14,6 @@ namespace ClassLibrarySBank.Model
         public float Amount { get; set; }
         
         public float Credit { get; set; }
+
     }
 }

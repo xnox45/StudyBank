@@ -2,13 +2,14 @@
     LoadPage();
 });
 
-model = JSON.parse(localStorage.getItem("User"));
+user = JSON.parse(localStorage.getItem("User"));
 
 function LoadPage() {
-    $("#Name").html(model.person.name);
-    $("#Amount").append(model.amount);
-    $("#Credit").append(model.credit);
+    $("#Name").html(user.person.name);
+    $("#Amount").append(user.amount);
+    $("#Credit").append(user.credit);
 }
+
 
 $("#Transfer").click(function () {
     $("#TransferModal").modal();
@@ -19,7 +20,9 @@ function Transfer() {
 
     model = {
         Amount: $("#TransferAmount").val(),
-        Taxnumber: $("#Taxnumber").val()
+        InTaxnumber: $("#Taxnumber").val(),
+        OutTaxnumber: user.person.taxNumber
+
     }
 
     $.ajax({
