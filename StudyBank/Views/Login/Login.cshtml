@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <section class="boxLogin container">
     <div class="content">
@@ -27,7 +26,7 @@
                     <input type="password" id="password" class="campos" placeholder="Password" name="Password">
                 </label>
 
-                <button type="submit" class="btn fade_8S" >Entrar</button>
+                <button type="submit" class="btn fade_8S" onclick="storage()">Entrar</button>
 
             </div><!--padding-->
 
@@ -42,3 +41,5 @@
 
     </div>
 </section><!--Login-->
+
+<script src="~/js/Login.js" asp-append-version="true"></script>

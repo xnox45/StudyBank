@@ -8,7 +8,12 @@ namespace ClassLibrarySBank.Model
 {
     public class TransferModel
     {
-        public float Amount { get; set; }
-        public string TaxNumber { get; set; }
+        public float Amount         { get; set; }
+
+        public string InTaxNumber   { get; set; }
+
+        public string OutTaxNumber  { get; set; }
+
+
     }
 }
