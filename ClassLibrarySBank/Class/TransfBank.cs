@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassLibrarySBank.Class
 {
-    public class User
+    public class TransfBank
     {
-        [Key]
-        public long ID { get; set; }
+        public int ID { get; set; }
 
-        public string Email { get; set; }
-        
-        public string Password { get; set; }
+        public int Client { get; set; }
+
+        public int ClientID { get; set; }
 
         public Person Person { get; set; }
+
     }
 }
