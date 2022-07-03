@@ -16,8 +16,8 @@ namespace ClassLibrarySBank.Class
         
         public string Password { get; set; }
 
-        public Person Person { get; set; }
+        public long PersonId { get; set; }
 
- 
+        public virtual Person Person { get; set; }
     }
 }

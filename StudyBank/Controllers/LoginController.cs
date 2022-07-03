@@ -48,18 +48,20 @@ namespace StudyBank.Controllers
                 if (user == null)
                     throw new Exception("Login inválido");
 
+                user.Person = new Context().Persons.Where(x => x.ID == user.ID).FirstOrDefault();
+
                 Account account = new Context().Accounts.Where(x => x.TaxNumber == user.Person.TaxNumber).FirstOrDefault();
 
                 AccountModel accountModel = new AccountModel
                 {
                     Amount = account.Amout,
                     Credit = account.Credit,
-                    Person = new Context().Persons.Where(x => x.TaxNumber == account.TaxNumber).FirstOrDefault()
+                    Person = user.Person
                 };
 
                 return accountModel;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }

@@ -17,7 +17,7 @@ namespace ClassLibrarySBank.Data
 
         public DbSet<Account> Accounts { get; set; }
 
-        public DbSet<HistoricTransfer> TransfBanks { get; set; }
+        public DbSet<HistoricTransfer> HistoricTransfers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
