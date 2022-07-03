@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ClassLibrarySBank.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,6 +38,22 @@ namespace ClassLibrarySBank.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TransfBanks",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    InAccountID = table.Column<int>(type: "int", nullable: false),
+                    OutAccountID = table.Column<int>(type: "int", nullable: false),
+                    TransferDate = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TransfBanks", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -68,6 +84,9 @@ namespace ClassLibrarySBank.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Accounts");
+
+            migrationBuilder.DropTable(
+                name: "TransfBanks");
 
             migrationBuilder.DropTable(
                 name: "Users");

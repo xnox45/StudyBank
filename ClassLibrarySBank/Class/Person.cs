@@ -11,14 +11,9 @@ namespace ClassLibrarySBank.Class
     {
         [Key]
         public long ID { get; set; }
-
         public string Name { get; set; }
-
-        public string TaxNumber { get; set; }
-        
+        public string TaxNumber { get; set; }       
         public DateTime BirthDate { get; set; }
-
-        public TransfBank TransfBank { get; set; }
 
     }
 }

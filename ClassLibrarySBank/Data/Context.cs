@@ -17,7 +17,7 @@ namespace ClassLibrarySBank.Data
 
         public DbSet<Account> Accounts { get; set; }
 
-        public DbSet<TransfBank> TransfBanks { get; set; }
+        public DbSet<HistoricTransfer> TransfBanks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,16 +26,15 @@ namespace ClassLibrarySBank.Data
             optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StudyBankApp;Data Source=DESKTOP-LDJ6DU0\\SQLEXPRESS");
             
         }
-
-        /*
+     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TransfBank>(entity =>
+            modelBuilder.Entity<HistoricTransfer>(entity =>
             {
-                entity.HasKey(e => new { e.Client, e.ClientID });
+                entity.HasKey(e => new { e.ID});
 
             });
         }
-        */
+       
     }
 }

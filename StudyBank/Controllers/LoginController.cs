@@ -1,4 +1,5 @@
 ﻿using ClassLibrarySBank.Class;
+using ClassLibrarySBank.Data;
 using ClassLibrarySBank.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -42,18 +43,18 @@ namespace StudyBank.Controllers
                 if (!ModelState.IsValid)
                     throw new Exception("Model invalido");
 
-                User user = new DataBase().users.Where(x => x.Email.ToLower() == model.Email.ToLower() && x.Password == model.Password).FirstOrDefault();
+                User user = new Context().Users.Where(x => x.Email.ToLower() == model.Email.ToLower() && x.Password == model.Password).FirstOrDefault();
 
                 if (user == null)
                     throw new Exception("Login inválido");
 
-                Account account = new DataBase().accounts.Where(x => x.TaxNumber == user.Person.TaxNumber).FirstOrDefault();
+                Account account = new Context().Accounts.Where(x => x.TaxNumber == user.Person.TaxNumber).FirstOrDefault();
 
                 AccountModel accountModel = new AccountModel
                 {
                     Amount = account.Amout,
                     Credit = account.Credit,
-                    Person = new DataBase().persons.Where(x => x.TaxNumber == account.TaxNumber).FirstOrDefault()
+                    Person = new Context().Persons.Where(x => x.TaxNumber == account.TaxNumber).FirstOrDefault()
                 };
 
                 return accountModel;

@@ -40,6 +40,30 @@ namespace ClassLibrarySBank.Migrations
                     b.ToTable("Accounts");
                 });
 
+            modelBuilder.Entity("ClassLibrarySBank.Class.HistoricTransfer", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<int>("InAccountID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OutAccountID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TransferDate")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("TransfBanks");
+                });
+
             modelBuilder.Entity("ClassLibrarySBank.Class.Person", b =>
                 {
                     b.Property<long>("ID")
