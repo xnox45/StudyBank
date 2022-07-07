@@ -23,7 +23,7 @@ namespace StudyBank.Controllers
                     throw new Exception("Model invalido");
 
                 AccountModel accountModel = GetAccount(model);
-
+                Console.Write(accountModel);
                 if (accountModel == null)
                     throw new Exception("Conta Invalida");
 
