@@ -14,6 +14,9 @@ namespace ClassLibrarySBank.Model
 
         public string OutTaxNumber  { get; set; }
 
-
+        public static void Update(object modifiedOrders)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
