@@ -61,7 +61,7 @@ namespace ClassLibrarySBank.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("TransfBanks");
+                    b.ToTable("HistoricTransfers");
                 });
 
             modelBuilder.Entity("ClassLibrarySBank.Class.Person", b =>

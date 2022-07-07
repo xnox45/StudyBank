@@ -23,7 +23,7 @@ namespace ClassLibrarySBank.Data
         {
             //Colocando a conexão ConectionString aqui usando o banco DESKTOP-LDJ6DU0\\SQLEXPRESS
 
-            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StudyBankApp;Data Source=DESKTOP-LDJ6DU0\\SQLEXPRESS");
+            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StudyBankApp;Data Source=(LocalDb)\\MSSQLLocalDB");
             
         }
      
