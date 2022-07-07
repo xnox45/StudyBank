@@ -26,7 +26,7 @@ namespace ClassLibrarySBank.Class
         {
             new Account{Amout = 10000,Credit = 2000, TaxNumber = "123456"},
             new Account{Amout = 5000,Credit = 1000, TaxNumber = "40028922"},
-            new Account{Amout = 5000,Credit = 1000, TaxNumber = "32222121"},
+            new Account{Amout = 5354524,Credit = 1000, TaxNumber = "32222121"},
         };
     }
 }
