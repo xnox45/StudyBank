@@ -34,7 +34,6 @@ namespace StudyBank.Controllers
            var accountOut = context.Accounts.Where(x => x.TaxNumber == model.OutTaxNumber).FirstOrDefault();
 
             //Verificando se o dinheiro na conta de quem vai enviar realmente consta
-            //
             if(accountOut.Amout >= model.Amount)
             {
 
