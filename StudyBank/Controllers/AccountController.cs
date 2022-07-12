@@ -6,10 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace StudyBank.Controllers
 {
-   
+
     public class AccountController : Controller
     {
         public IActionResult Account(Account account)
@@ -27,35 +28,40 @@ namespace StudyBank.Controllers
             return View(model);
         }
 
+
         [HttpPost]
-        public bool Transfer(TransferModel model)
+        public void Transfer(TransferModel model)
         {
-            //DataBase database = new DataBase();
             Context context = new Context();
 
             //Nessa linha estou usando para fazer a comparação se o CPF de quem vai enviar realmente existe
             var accountOut = context.Accounts.Where(x => x.TaxNumber == model.OutTaxNumber).FirstOrDefault();
 
+            //Nessa linha estou usando para fazer a comparação se o CPF de quem vai receber realmente existe
+            var accountIn = context.Accounts.Where(x => x.TaxNumber == model.InTaxNumber).FirstOrDefault();
+
+
             //Verificando se o dinheiro na conta de quem vai enviar realmente consta
             if (accountOut.Amout >= model.Amount)
             {
-
-                var accountIn = new Context().Accounts.Where(x => x.TaxNumber == model.InTaxNumber).FirstOrDefault();
 
                 //retirando o dinheiro de quem vai enviar e enviando para quem vai receber
                 accountOut.Amout = accountOut.Amout - (float)model.Amount;
                 accountIn.Amout = accountIn.Amout + (float)model.Amount;
 
-                context.SaveChanges();
-
             }
 
-            //retorno positivo ou negativo
-            else
-            {
-                return false;
-            }
-            return true;
+            var historic = new HistoricTransfer();
+
+            historic.ID = historic.ID++;
+            historic.InAccountID = (int)accountIn.ID;
+            historic.OutAccountID = (int)accountOut.ID;
+            historic.TransferDate = DateTime.Now;
+            historic.Amount = accountOut.Amout;
+
+            context.HistoricTransfers.Add(historic);
+            context.SaveChanges();
+            
         }
     }
 }

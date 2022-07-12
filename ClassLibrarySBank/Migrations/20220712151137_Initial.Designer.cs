@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClassLibrarySBank.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220707135946_Initial2")]
-    partial class Initial2
+    [Migration("20220712151137_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,9 +44,9 @@ namespace ClassLibrarySBank.Migrations
 
             modelBuilder.Entity("ClassLibrarySBank.Class.HistoricTransfer", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Amount")
@@ -58,8 +58,8 @@ namespace ClassLibrarySBank.Migrations
                     b.Property<int>("OutAccountID")
                         .HasColumnType("int");
 
-                    b.Property<int>("TransferDate")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("TransferDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 

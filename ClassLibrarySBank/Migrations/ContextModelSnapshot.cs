@@ -42,9 +42,9 @@ namespace ClassLibrarySBank.Migrations
 
             modelBuilder.Entity("ClassLibrarySBank.Class.HistoricTransfer", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Amount")
@@ -56,8 +56,8 @@ namespace ClassLibrarySBank.Migrations
                     b.Property<int>("OutAccountID")
                         .HasColumnType("int");
 
-                    b.Property<int>("TransferDate")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("TransferDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 

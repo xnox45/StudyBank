@@ -26,11 +26,11 @@ namespace ClassLibrarySBank.Migrations
                 name: "HistoricTransfers",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     InAccountID = table.Column<int>(type: "int", nullable: false),
                     OutAccountID = table.Column<int>(type: "int", nullable: false),
-                    TransferDate = table.Column<int>(type: "int", nullable: false),
+                    TransferDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Amount = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
